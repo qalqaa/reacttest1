@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@bem-react/classname": "^1.6.0",
+    "@bem-react/classnames": "^1.3.10",
+    "@consta/icons": "^1.0.1",
+    "@consta/uikit": "^5.2.2",
+    "@tanstack/react-query": "^5.32.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,9 +15,15 @@
     "@types/node": "^16.18.96",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
+    "compute-scroll-into-view": "^1.0.17",
+    "date-fns": "^2.30.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^11.3.4",
+    "react-imask": "^7.2.1",
     "react-scripts": "5.0.1",
+    "react-textarea-autosize": "^8.5.3",
+    "react-transition-group": "^4.4.5",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -20,7 +31,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:liferay": "lnbs-build",
+    "deploy:liferay": "npm run build:liferay && lnbs-deploy"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +52,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "liferay-npm-build-support": "^2.18.8",
+    "liferay-npm-bundler": "^2.18.8",
+    "liferay-npm-bundler-preset-create-react-app": "^2.18.8"
+  },
+  "portlet": {
+    "com.liferay.portlet.display-category": "category.react-widget",
+    "javax.portlet.name": "incommandproject",
+    "javax.portlet.security-role-ref": "power-user,user",
+    "javax.portlet.resource-bundle": "content.Language",
+    "com.liferay.portlet.instanceable": true
   }
 }
